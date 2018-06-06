@@ -9,7 +9,7 @@ type StopWatch struct {
 	start time.Time
 }
 
-// StartTimer starts our stopwatch
+// StartTimer starts our StopWatch
 func (sw *StopWatch) StartTimer() {
 	sw.start = time.Now()
 }
