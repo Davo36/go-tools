@@ -2,7 +2,7 @@ package tools
 
 import "time"
 
-// Some handy tools.
+// Some handy tools for go projects.
 
 // StopWatch is just a handy way to measure time taken for various tasks.
 type StopWatch struct {
@@ -14,10 +14,13 @@ func (sw *StopWatch) StartTimer() {
 	sw.start = time.Now()
 }
 
-// EndTimer stops our stopwatch
+// EndTimer returns the amount of time since the StopWatch was started - as a time.Duration type.
+// Use time.Duration.Seconds() to get elapsed seconds for instance.
 func (sw *StopWatch) EndTimer() time.Duration {
 	return (time.Since(sw.start))
 }
+
+// Go doesn't have integer min and max functions.  Only float ones. So creating my own here.
 
 // Min : A wee min function.
 func Min(a int, b int) int {
